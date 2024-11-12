@@ -1,0 +1,75 @@
+<div class="form-container">
+    <form action="/submit" method="post" class="mt-3 mb-4">
+        <p class="fw-bold mb-3">Already Register? <a href="https://binusmaya.binus.ac.id/">Login here.</a></p>
+        <div class="form-group mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="participantName" placeholder="Please Enter Your Name" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="studentId" class="form-label">Student Id:</label>
+            <input type="number" name="studentId" id="studentId" class="form-control" [(ngModel)]="participantStudentId" placeholder="Please Enter Your Student Id" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" name="email" id="email" class="form-control" [(ngModel)]="participantEmail" placeholder="Please Enter Your Email Address" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="telephoneNumber" class="form-label">Telephone Number:</label>
+            <input type="text" name="telephoneNumber" id="telephoneNumber" [(ngModel)]="participantTelephoneNumber" class="form-control" placeholder="Please Enter Your Telephone Number" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="lineId" class="form-label">Line Id:</label>
+            <input type="text" name="lineId" id="lineId" [(ngModel)]="participantLineId" class="form-control" placeholder="Please Enter Your Line Id" required>
+        </div>
+        <div class="form-group mb-3">
+            <label>Faculty:</label>
+            <select class="form-control" [(ngModel)]="participantFaculty" name="jurusan" required>
+                <option value="" disabled selected>Please Select Your Faculty</option>
+                <option value="Binus Business School">Binus Business School</option>
+                <option value="School of Communication">School of Communication</option>
+            </select>
+        </div>
+        <div class="form-group mb-3" *ngIf="participantFaculty !== 'Binus Business School' && participantFaculty !== 'School of Communication'">
+            <label>Major:</label>
+            <select class="form-control" name="defaultFaculty" required>
+                <option value="" disabled selected>Please Select Your Faculty First</option>
+            </select>
+        </div>
+        <div class="form-group mb-3" *ngIf="participantFaculty === 'Binus Business School'">
+            <label>Major:</label>
+            <select class="form-control" name="bbsFaculty" [(ngModel)]="participantMajor" required>
+                <option value="" disabled selected>Please Select Your Major</option>
+                <option value="Global Business Marketing">Global Business Marketing</option>
+                <option value="Business Creation">Business Creation</option>
+                <option value="International Business Management">International Business Management</option>
+                <option value="Management">Management</option>
+            </select>
+        </div>
+        <div class="form-group mb-3" *ngIf="participantFaculty === 'School of Communication'">
+            <label>Major:</label>
+            <select class="form-control" name="socFaculty" [(ngModel)]="participantMajor" required>
+                <option value="" disabled selected>Please Select Your Major</option>
+                <option value="Global Business Marketing">Creative Communication</option>
+                <option value="Business Creation">Marketing Communication</option>
+                <option value="International Business Management">Mass Communication</option>
+            </select>
+        </div>
+        <div class="form-group mb-3">
+            <label>Class Year:</label>
+            <select class="form-control" name="classYear" [(ngModel)]="participantClassYear" required>
+                <option value="" disabled selected>Please Select Your Class Year</option>
+                <option value="Binusian 2025">Binusian 2025</option>
+                <option value="Binusian 2026">Binusian 2026</option>
+                <option value="Binusian 2027">Binusian 2027</option>
+                <option value="Binusian 2028">Binusian 2028</option>
+            </select>
+        </div>
+        <div class="button-container">
+        <input 
+                type="button" 
+                value="Submit" 
+                class="btn btn-primary mt-3"
+                (click)="btnClicked()"/>
+        </div>
+    </form>
+</div>

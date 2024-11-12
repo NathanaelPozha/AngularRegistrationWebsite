@@ -1,0 +1,35 @@
+<div class="well">
+    <div class="container mt-4 mb-5">
+    <h3 class="h3">Participant Data Table</h3>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Student Id</th>
+            <th>Email</th>
+            <th>Telephone Number</th>
+            <th>Line Id</th>
+            <th>Faculty</th>
+            <th>Major</th>
+            <th>Class Year</th>
+            <th>Seat Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let participantData of registrationData">
+            <td>{{participantData.participantId}}</td>
+            <td>{{participantData.participantName}}</td>
+            <td>{{participantData.participantStudentId}}</td>
+            <td>{{participantData.participantEmail}}</td>
+            <td>{{participantData.participantTelephoneNumber}}</td>
+            <td>{{participantData.participantLineId}}</td>
+            <td>{{participantData.participantFaculty}}</td>
+            <td>{{participantData.participantMajor}}</td>
+            <td>{{participantData.participantClassYear}}</td>
+            <td>{{participantData.participantSeatNumber}}</td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
